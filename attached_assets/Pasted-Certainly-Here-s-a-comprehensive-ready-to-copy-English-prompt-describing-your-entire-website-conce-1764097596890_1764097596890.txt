@@ -1,0 +1,37 @@
+Certainly! Here's a comprehensive, ready-to-copy English prompt describing your entire website concept, layout behavior, design system, and interactive elements — optimized for another AI (e.g., for HTML generation, design visualization, or development guidance):
+
+---
+
+Create a single-file, fully responsive personal portfolio website for an independent 2D game developer. The site must be bright, clean, and modern, using a pearl-white color scheme (#fdfdfd, #f9f8f6, #f5f4f0) with subtle accents of neon green (#39ff14) used only for soft glows, underlines, and hover effects — never for body text. The developer goes by the public name "320KETER" (all uppercase), though his real name is Ivan Kovalenko.
+
+The layout must include the following sections in order:  
+1. **Home** – with the headline “Добро пожаловать в моё портфолио” (Welcome to my portfolio), followed by a short 3-line description of his work. Apply a very subtle top-down linear gradient (rgba(57,255,20,0.06) fading to transparent by 120px) only in this section. Line-height of the headline must be reduced to 0.9 (≈2.5× tighter than normal). The entire section must be centered horizontally and vertically within the viewport (minus header offset).
+
+2. **About Me** – centered text describing his solo development process (graphics, sound, code, etc.), followed by three square tool icons labeled “Aseprite”, “Godot”, and “Photoshop”. Each icon is a 70×70px placeholder with a light gray background and centered text. The labels must be centered directly beneath each icon (no left/right shift), in small font (0.85rem), also centered.
+
+3. **Portfolio** – titled “Портфолио”, positioned significantly lower (at least 120px top padding) to avoid overlap with the fixed header. This section displays two game cards:
+   - **Tale of Moloh**: a dark, atmospheric 2D game (first project, mixed Russian/English text, low lighting).
+   - **Goldy’s Journey**: a bright, dynamic 2D game (only 25% complete, 4 levels done).
+   
+   Each card initially shows only the game title, one main screenshot placeholder, and a “БОЛЬШЕ” (MORE) button. When clicked, the button smoothly expands (via CSS max-height + opacity transition over 0.5s) to reveal: full description, status, a download link (styled with green underline), and two additional screenshot placeholders in a 2-column grid. The download link uses a custom underline (color: neon green, thickness: 2px, offset: 3px).
+
+4. **Contacts** – this is the only section **not** centered. All content must be left-aligned but indented ~50px from the left edge (not flush). The heading “Контакты” must have at least 5× more vertical space above the form fields than default. The form includes: Name, Email (with @ validation on submit), and Message. Submit button has a neon-green outline and glow on hover.
+
+**Navigation**:  
+- A fixed header at the top with the logo “320KETER” centered above a horizontal row of four nav buttons: Home, About, Portfolio, Contacts (2×2 grid on mobile, single row on desktop).
+- Clicking a nav item scrolls smoothly to the corresponding section.
+- The currently visible section (based on scroll position) must highlight its nav button with a soft neon glow (box-shadow: 0 0 6px rgba(57,255,20,0.4)), regardless of click interaction—no hover or active click effect beyond this scroll-based indicator.
+
+**Technical/UX requirements**:  
+- All sections must use `scroll-margin-top: 120px` to prevent content from hiding under the fixed header when navigating via anchor links.
+- On mobile, the contact form re-centers and becomes full-width.
+- Footer includes: “Свяжитесь со мной:”, two social icons (Telegram and email), “При поддержке Qwen” in small italic text, and copyright line.
+- Telegram link must use `tg://resolve?user=@KeTeR320`.
+- Email link uses `mailto:twiink320@gmail.com` and displays the letter “G” instead of an envelope icon.
+- After the “Send” button, there must be a visible vertical spacer (≥3rem) before the black footer begins.
+
+The entire site must be contained in one HTML file (HTML + CSS + JS). Use semantic tags (`<header>`, `<section>`, `<footer>`), CSS Grid/Flexbox for layout, and no external libraries. All placeholder images (screenshots, tool icons) should be clearly marked (e.g., “Скриншот 1”) and easily replaceable with real PNG paths later.
+
+--- 
+
+You can now copy and paste this prompt into any AI tool to generate consistent, on-brand implementations. Let me know if you'd like a version tailored for image generation (e.g., Midjourney) or a Figma design spec!
