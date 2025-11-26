@@ -1,27 +1,19 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { metaImagesPlugin } from "./vite-plugin-meta-images";
 
 export default defineConfig({
+  // 🔸 1. УКАЖИ ИМЯ СВОЕГО РЕПОЗИТОРИЯ ЗДЕСЬ (например, "/portfolio/")
+  base: "/portfolio/",
+
   plugins: [
     react(),
-    runtimeErrorOverlay(),
     tailwindcss(),
     metaImagesPlugin(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
-      : []),
+    // Replit-плагины отключены для сборки вне Replit
   ],
   resolve: {
     alias: {
@@ -37,7 +29,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // 🔸 2. GitHub Pages требует, чтобы файлы были в ./dist (не ./dist/public)
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
   server: {
