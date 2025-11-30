@@ -7,7 +7,7 @@ import { metaImagesPlugin } from "./vite-plugin-meta-images";
 
 export default defineConfig({
   // 🔸 1. УКАЖИ ИМЯ СВОЕГО РЕПОЗИТОРИЯ ЗДЕСЬ (например, "/portfolio/")
-  base: "/portfolio/",
+  base: "/keter_portfolio_1",
 
   plugins: [
     react(),
